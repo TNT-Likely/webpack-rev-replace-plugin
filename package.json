@@ -1,0 +1,19 @@
+{
+  "name": "webpack-rev-replace-plugin",
+  "version": "0.0.1",
+  "description": "Webpack is awesome, but it is not webpages friendly. it using javascript file as the entry to handle all the staffs.This plugin give you the ability to handle your webpages separately. It copy all the webpages your want to the output path, and all assets links are replaced with the webpack compiled version.",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.0.6",
+    "glob": "^6.0.1",
+    "lodash": "^4.15.0",
+    "syntax-error": "^1.1.4",
+    "webpack": "^1.12.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
