@@ -2,7 +2,8 @@
 
 Rewrite occurrences of filenames which have been renamed by webpack.
 
-```javascript
+###demo code 
+```js
 var RevReplacePlugin = require('webpack-rev-replace-plugin');
 
 module.exports = {
@@ -33,6 +34,32 @@ module.exports = {
 		})
 	]
 };
+```
+###before
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script href='app.js'></script>
+</head>
+<body>
+
+</body>
+</html>
+```
+###after
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script href='app.c54df8.js'></script>
+</head>
+<body>
+
+</body>
+</html>
 ```
 ## API
 

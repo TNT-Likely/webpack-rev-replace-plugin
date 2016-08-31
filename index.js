@@ -5,7 +5,6 @@ var glob = require('glob')
 var Promise = require('bluebird')
 var _ = require('lodash')
 
-var webpack = require('webpack')
 var NodeTemplatePlugin = require('webpack/lib/node/NodeTemplatePlugin')
 var NodeTargetPlugin = require('webpack/lib/node/NodeTargetPlugin')
 var LoaderTargetPlugin = require('webpack/lib/LoaderTargetPlugin')
@@ -53,7 +52,6 @@ RevReplacePlugin.prototype.apply = function(compiler) {
 
   compiler.plugin('emit', function(compilation, callback) {
     var assets = self.getAssets(compilation)
-
     var promises = self.result.map(function(item) {
 
       return self.execPage(compilation, item)
@@ -80,7 +78,7 @@ RevReplacePlugin.prototype.apply = function(compiler) {
  */
 RevReplacePlugin.prototype.getCompilerName = function(filePath) {
   var relativePath = path.relative(this.context, filePath)
-  return 'page-webpack-plugin for "' + (filePath.length < relativePath.length ? filePath : relativePath) + '"'
+  return 'webpack-rev-replace-plugin for "' + (filePath.length < relativePath.length ? filePath : relativePath) + '"'
 }
 
 /**
@@ -216,8 +214,6 @@ RevReplacePlugin.prototype.getAssets = function(compilation) {
  * @return {string}
  */
 RevReplacePlugin.prototype.replacePageAssets = function(html, assets) {
-  var tagRegx = /<(link|script).*?(?:>(<\/script>)?|\/>)/gi
-  var urlRegx = /(src|href)=[\'\"]?([^\'\">\s]*)[\'\"]?/i
   var htmlReplaced = html
 
   Object.keys(assets).forEach(function(key) {

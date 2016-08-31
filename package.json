@@ -1,6 +1,6 @@
 {
   "name": "webpack-rev-replace-plugin",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Rewrite occurrences of filenames which have been renamed by webpack.",
   "main": "index.js",
   "keywords": [
