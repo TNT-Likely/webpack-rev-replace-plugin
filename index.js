@@ -216,7 +216,9 @@ RevReplacePlugin.prototype.getAssets = function(compilation) {
 RevReplacePlugin.prototype.replacePageAssets = function(html, assets) {
   var htmlReplaced = html
 
-  Object.keys(assets).forEach(function(key) {
+  Object.keys(assets).Object.keys(assets).sort(function(a, b) {
+    return b.length - a.length
+  }).forEach(function(key) {
     htmlReplaced = htmlReplaced.split(key).join(assets[key])
   })
 
